@@ -22,57 +22,84 @@
 </head>
 
 <body>
-    <!-- overlay for mobile -->
-    <div id="overlay">
-        <div>
-            <i class="fa fa-times" title="button to close mobile navigation" onclick="off()"></i>
+    <!-- Side Menu -->
+    <div id="side-menu" class="side-menu">
+        <div class="side-menu-header">
+            <i class="fa fa-times" title="Close menu" onclick="closeMenu()"></i>
         </div>
-        <div class="overlay-text">
-            <a href="index.html">Home</a>
+        <div class="side-menu-content" style="font-size: 6rem;">
+            <a href="index.html">Home</a> 
             <a href="Contact.html">Contact</a>
             <a href="about.html">About</a>
             <a href="services.html">Services</a>
         </div>
-
     </div>
+
     <header>
-        <nav class="nav full-nav">
+        <!-- Desktop Navigation -->
+        <nav class="nav full-nav" style="border-bottom: 2px solid #000; padding-bottom: 10px;">
             <div>
-                <img src="images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 2cm;"
-                    loading="lazy">
+                <img src="images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 3cm;" loading="lazy">
             </div>
-            <div>
-                <a href="index.html">Home</a>
-                <a href="Contact.html">Contact</a>
-                <a href="about.html">About</a>
+            <div style="font-size: 1.5rem;">
+                <a href="index.html">Home</a> |
+                <a href="Contact.html">Contact</a> |
+                <a href="about.html">About</a> |
                 <a href="services.html">Services</a>
             </div>
         </nav>
 
-        <!-- mobile -->
+        <!-- Mobile Navigation -->
         <nav class="nav mobile-nav">
             <div>
-                <img src="images/CREATIVES.png" alt="alvins logo" style="width: 1cm;">
+                <img src="images/CREATIVES.png" alt="TreeHouseCreativesLLC logo" style="width: 2cm;">
             </div>
             <div>
-                <i class="fa-solid fa-bars" title="button to open navigation" onclick="on()"></i>
+                <i class="fa-solid fa-bars" title="Open menu" onclick="openMenu()"></i>
             </div>
         </nav>
     </header>
+</body>
 
     <main>
+        <!-- Hero Section -->
         <div class="hero-container">
-            <img class="hero-image" src="images/TreeHouse Creative Holidays.jpg" style="width: 100%;" 
-                alt="TreeHouse Creatives logo" loading="lazy">
+            <div style="text-align: center;">
+                <img class="hero-image" src="images/TreeHouse Creative Holidays.jpg" style="width: 80%; padding-top: 4rem;" 
+                    alt="TreeHouse Creatives logo" loading="lazy">
+            </div>
             <div class="hero-text">
-                <h1>TreeHouse Creatives</h1>
+                <p>Unleashing Creativity, One Project at a Time</p>
             </div>
         </div>
         <div class="red-spacer"></div>
 
+        <!-- Recent Projects Section -->
+        <section id="recent-projects">
+            <div style="background-color: green; padding: 10px;">
+                <h2>Recent Projects</h2>
+            </div>
+            <div class="projects-container">
+                <div class="project-item">
+                    <img src="images/will.jpg" alt="Project 1">
+                    <h3>Project Title 1</h3>
+                    <p>A brief description of the project. Highlight the creative aspects here.</p>
+                </div>
+                <div class="project-item">
+                    <img src="images/dishon.jpg" alt="Project 2">
+                    <h3>Project Title 2</h3>
+                    <p>A brief description of the project. Include unique features or collaborations.</p>
+                </div>
+                <div class="project-item">
+                    <img src="images/christmas.jpg" alt="Project 3">
+                    <h3>Project Title 3</h3>
+                    <p>A brief description of the project. Include unique features or collaborations.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- footer -->
+    <!-- Footer -->
     <footer>
         <div>
             <img src="images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 50%;" loading="lazy">
@@ -89,10 +116,24 @@
             </div>
         </div>
         <div>
-            <img src="images/alvins_instagram.png" alt="alvins instagram logo" style="width: 10%;" loading="lazy">
-            <img src="images/Alvins_facebook.png" alt="alvins facebook logo" style="width: 10%;" loading="lazy">
+            <a href="https://www.instagram.com/treehousecreativesllc" target="_blank" title="Follow us on Instagram">
+                <img src="images/instagram logo redo.png" alt="Instagram logo" style="width: 20%;" loading="lazy">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61567313220968" target="_blank" title="Follow us on Facebook">
+                <img src="images/facebook logo redo.png" alt="Facebook logo" style="width: 20%;" loading="lazy">
+            </a>
         </div>
     </footer>
-</body>
 
+    <!-- JavaScript for Side Menu -->
+    <script>
+        function openMenu() {
+            document.getElementById('side-menu').classList.add('open');
+        }
+
+        function closeMenu() {
+            document.getElementById('side-menu').classList.remove('open');
+        }
+    </script>
+</body>
 </html>
