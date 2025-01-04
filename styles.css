@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #55b74a;
+    background-color: #ffffff;
     margin: 0;
     box-sizing: border-box;
 }
@@ -468,3 +468,4 @@ section h2 {
 .side-menu.open {
     right: 0; /* Slide in from the right */
 }
+

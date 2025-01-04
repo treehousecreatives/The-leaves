@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "images",
+			"path": "../../../../.Trash/images"
+		},
+		{
+			"name": "The-leaves",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5503,
+		"liveServer.settings.multiRootWorkspaceName": "The-leaves"
+	}
+}
