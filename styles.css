@@ -469,3 +469,100 @@ section h2 {
     right: 0; /* Slide in from the right */
 }
 
+/* Service Section */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        section {
+            padding: 2rem 1rem;
+        }
+
+        section h2 { 
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: #556b2f;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .service-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .service-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .service-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .service-details {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .service-details h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .service-details p {
+            margin-bottom: 1rem;
+        }
+
+        .book-now {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #556b2f;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .book-now:hover {
+            background: #445522;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        footer img {
+            margin-top: 1rem;
+        }
+
