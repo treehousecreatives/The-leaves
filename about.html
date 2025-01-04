@@ -76,44 +76,44 @@
 </head>
 
 <body>
-    <!-- Overlay for mobile -->
-    <div id="overlay">
-        <div>
-            <i class="fa fa-times" title="Close mobile navigation" onclick="off()"></i>
+    <!-- Side Menu -->
+    <div id="side-menu" class="side-menu">
+        <div class="side-menu-header">
+            <i class="fa fa-times" title="Close menu" onclick="closeMenu()"></i>
         </div>
-        <div class="overlay-text">
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
+        <div class="side-menu-content" style="font-size: 6rem;">
+            <a href="index.html">Home</a> 
+            <a href="contact.html">Contact</a>
             <a href="about.html">About</a>
-            <a href="contact.html" class="contact-nav">Contact</a>
+            <a href="services.html">Services</a>
         </div>
-
     </div>
+
     <header>
-        <nav class="nav full-nav">
+        <!-- Desktop Navigation -->
+        <nav class="nav full-nav" style="border-bottom: 2px solid #000; padding-bottom: 10px;">
             <div>
-                <img src="images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 2cm;"
-                    loading="lazy">
+                <img src="images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 3cm;" loading="lazy">
             </div>
-            <div>
-                <a href="index.html">Home</a>
+            <div style="font-size: 1.5rem;">
+                <a href="index.html">Home</a> |
+                <a href="contact.html">Contact</a> |
+                <a href="about.html">About</a> |
                 <a href="services.html">Services</a>
-                <a href="about.html">About</a>
-                <a href="contact.html" class="contact-nav">Contact</a>
             </div>
         </nav>
 
-        <!-- Mobile -->
+        <!-- Mobile Navigation -->
         <nav class="nav mobile-nav">
             <div>
-                <img src="images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 1cm;" loading="lazy">
+                <img src="images/CREATIVES.png" alt="TreeHouseCreativesLLC logo" style="width: 2cm;">
             </div>
             <div>
-                <i class="fa-solid fa-bars" title="Open navigation" onclick="on()"></i>
+                <i class="fa-solid fa-bars" title="Open menu" onclick="openMenu()"></i>
             </div>
         </nav>
     </header>
-
+</body>
     <main>
         <div class="red-spacer"></div>
 
