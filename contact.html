@@ -24,19 +24,44 @@
 </head>
 
 <body>
+    <!-- Side Menu -->
+    <div id="side-menu" class="side-menu">
+        <div class="side-menu-header">
+            <i class="fa fa-times" title="Close menu" onclick="closeMenu()"></i>
+        </div>
+        <div class="side-menu-content" style="font-size: 6rem;">
+            <a href="index.html">Home</a> 
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+        </div>
+    </div>
+
     <header>
-        <nav class="nav">
+        <!-- Desktop Navigation -->
+        <nav class="nav full-nav" style="border-bottom: 2px solid #000; padding-bottom: 10px;">
             <div>
-                <img src="images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 2cm;" loading="lazy">
+                <img src="images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 3cm;" loading="lazy">
+            </div>
+            <div style="font-size: 1.5rem;">
+                <a href="index.html">Home</a> |
+                <a href="contact.html">Contact</a> |
+                <a href="about.html">About</a> |
+                <a href="services.html">Services</a>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation -->
+        <nav class="nav mobile-nav">
+            <div>
+                <img src="images/CREATIVES.png" alt="TreeHouseCreativesLLC logo" style="width: 2cm;">
             </div>
             <div>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="contact.html">Contact</a>
+                <i class="fa-solid fa-bars" title="Open menu" onclick="openMenu()"></i>
             </div>
         </nav>
     </header>
+</body>
 
     <main>
         <section>
