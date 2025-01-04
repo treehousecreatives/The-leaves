@@ -64,35 +64,117 @@
 </body>
 
     <main>
-        <section>
-            <form class="contact-form" action="https://formspree.io/f/xdkkpgjg" method="POST"></form>
+        <section class="contact-section">
             <h2>Contact Us</h2>
             <form class="contact-form" action="send_mail.php" method="POST">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-                <label for="message">Your Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
-
-                <button type="submit">Send Message</button>
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
             </form>
 
             <div class="contact-details">
                 <h3>Our Contact Information</h3>
-                <p>Email: TreeHouseCreativesLLC@gmail.com</p>
-                <p>Phone: (770) 847-6850</p>
+                <p>Email: <a href="mailto:TreeHouseCreativesLLC@gmail.com">TreeHouseCreativesLLC@gmail.com</a></p>
+                <p>Phone: <a href="tel:+17708476850">(770) 847-6850</a></p>
             </div>
 
             <div class="social-links">
                 <h3>Connect with us on Social Media</h3>
-                <a href="https://www.instagram.com/treehousecreatives" target="_blank" class="instagram">Instagram</a>
-                <a href="https://www.facebook.com/treehousecreatives" target="_blank" class="facebook">Facebook</a>
+                <a href="https://www.instagram.com/treehousecreatives" target="_blank" class="social-link instagram">Instagram</a>
+                <a href="https://www.facebook.com/treehousecreatives" target="_blank" class="social-link facebook">Facebook</a>
             </div>
         </section>
     </main>
+
+    <style>
+        .contact-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+
+        .contact-details,
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .contact-details p,
+        .social-links a {
+            margin: 5px 0;
+        }
+
+        .social-link {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .social-link.instagram {
+            background-color: #E4405F;
+        }
+
+        .social-link.facebook {
+            background-color: #3b5998;
+        }
+
+        .social-link:hover {
+            opacity: 0.8;
+        }
+    </style>
 
     <footer>
         <div>

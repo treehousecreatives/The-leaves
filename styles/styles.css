@@ -508,3 +508,131 @@ section h2 {
     font-size: 1rem;
     color: #555;
 }
+
+/* About Section */
+.about-section {
+    padding: 2rem;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.about-image {
+    width: 50%;
+    border-radius: 0.5rem;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-link {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background-color: #556b2f;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.contact-link:hover {
+    background-color: #445522;
+}
+
+/* Contact Section */
+.contact-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+.contact-details,
+.social-links {
+    margin-top: 20px;
+}
+
+.contact-details p,
+.social-links a {
+    margin: 5px 0;
+}
+
+.social-link {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.social-link.instagram {
+    background-color: #E4405F;
+}
+
+.social-link.facebook {
+    background-color: #3b5998;
+}
+
+.social-link:hover {
+    opacity: 0.8;
+}
+
