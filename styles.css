@@ -1,198 +1,189 @@
-/* General Styling */
+/* General Reset */
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 
-body {
-    background-color: #ffffff;
-    margin: 0;
-    box-sizing: border-box;
-    color: #333;
+/* Navigation Bar */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2b5a2b;
+    padding: 1rem 2rem;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-@media (max-width: 967px) {
-    html {
-        font-size: 80%;
+.nav .logo-img {
+    width: 150px;
+}
+
+.nav .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav .nav-links a:hover,
+.nav .nav-links a.active {
+    color: #ffd700;
+}
+
+.mobile-nav-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(43, 90, 43, 0.8), rgba(43, 90, 43, 0.8)), url('images/hero-bg.jpg') center/cover;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+/* Services Section */
+.services-section {
+    padding: 3rem 2rem;
+    background-color: #f9f9f9;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.service {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.service img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.service h3 {
+    margin: 1rem 0;
+    color: #2b5a2b;
+}
+
+.service p {
+    padding: 0 1rem;
+    color: #555;
+}
+
+.book-now {
+    display: inline-block;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    background-color: #2b5a2b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.book-now:hover {
+    background-color: #237423;
+}
+
+/* Footer */
+footer {
+    background-color: #2b5a2b;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 2rem;
+}
+
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mobile-nav-icon {
+        display: block;
+    }
+
+    .nav .nav-links {
+        display: none;
+    }
+
+    .side-menu {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+    .nav .nav-links {
+        display: none;
+    }
+
+    .side-menu {
+        display: block;
     }
 }
 
 @media (max-width: 768px) {
-    html {
-        font-size: 60%;
+    .nav .nav-links {
+        display: none;
+    }
+
+    .side-menu {
+        display: block;
     }
 }
 
-/* Header */
-header {
-    position: relative;
-    z-index: 1;
-    height: 3rem;
+@media (max-width: 768px) {
+    .nav .nav-links {
+        display: none;
+    }
+
+    .side-menu {
+        display: block;
+    }
 }
 
-.nav {
-    background-color: #f0f0f0;
-    color: darkolivegreen;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: .5rem;
-    position: fixed;
-    width: 100%;
-    height: 6rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
-}
-
-/* Service Section */
-section {
-    padding: 2rem 1rem;
-}
-
-section h2 { 
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
-    color: #556b2f;
-}
-
+/* Services Grid */
 .services-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* Two items per row */
     gap: 2rem;
     margin: 0 auto;
     max-width: 1200px;
 }
 
-.service-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.service-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out;
-}
-
-.service-item:hover img {
-    transform: scale(1.1);
-}
-
-.service-details {
-    position: absolute;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 1rem;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-.service-details h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-}
-
-.service-details p {
-    margin-bottom: 1rem;
-    font-size: 1rem;
-}
-
-.book-now {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background: #556b2f;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background 0.3s ease-in-out;
-}
-
-.book-now:hover {
-    background: #445522;
-}
-
-/* Footer */
-footer {
-    background: #333;
-    color: white;
-    padding: 1.5rem 2rem;
-    text-align: center;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 1rem;
-}
-
-footer img {
-    margin-top: 1rem;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes sway {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(0);
-    }
-}
-
-/* Overlay Menu */
-#overlay {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 9999;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-.overlay-text a {
-    display: block;
-    color: white;
-    font-size: 2rem;
-    margin: 1rem 0;
-    text-decoration: none;
-    opacity: 0;
-    animation: fadeIn 1s ease forwards, sway 2s ease-in-out infinite;
-}
-
-/* Add delay to fade-in for each menu item */
-.overlay-text a:nth-child(1) {
-    animation-delay: 0.2s;
-}
-
-.overlay-text a:nth-child(2) {
-    animation-delay: 0.4s;
-}
-
-.overlay-text a:nth-child(3) {
-    animation-delay: 0.6s;
-}
-
-.overlay-text a:nth-child(4) {
-    animation-delay: 0.8s;
+h2 {
+    font-family: 'Roboto', sans-serif; /* Replace with your preferred font */
 }
