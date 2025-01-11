@@ -192,3 +192,7 @@ h1 {
     font-family: 'Roboto', sans-serif; /* Replace with your preferred font */
 }
 
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
