@@ -117,6 +117,10 @@
 <!-- JavaScript for Custom Redirection -->
 
 <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const form = event.target;
+
         // Send the form data using the Fetch API
         fetch(form.action, {
             method: form.method,
@@ -128,7 +132,7 @@
         .then((response) => {
             if (response.ok) {
                 // Redirect to the Thank You page on success
-                window.location.href = "thank_you.html"
+                window.location.href = "thank_you.html";
             } else {
                 // Show an error message if submission fails
                 alert("Something went wrong. Please try again later.");
