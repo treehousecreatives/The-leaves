@@ -22,3 +22,16 @@ style.innerHTML = `
     }
 `;
 document.head.appendChild(style);
+
+// Scroll-based fade-in effect
+const fadeIns = document.querySelectorAll('.about-content');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+});
+
+fadeIns.forEach(fadeIn => observer.observe(fadeIn));

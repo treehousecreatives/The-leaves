@@ -30,7 +30,7 @@ header {
 
 .nav {
     background-color: #f0f0f0;
-    color: darkolivegreen;
+    color: rgb(85, 107, 47);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -634,5 +634,12 @@ section h2 {
 
 .social-link:hover {
     opacity: 0.8;
+}
+
+/* recapcha */
+.g-recaptcha {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
 }
 
