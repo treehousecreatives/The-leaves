@@ -66,7 +66,11 @@
 <main>
     <section class="contact-section">
         <h2 style="color: black; padding-top: 2rem;">Contact Us</h2>
-        <form id="contactForm" action="https://script.google.com/macros/s/AKfycbzAbfsCRMhqjXl8Km2IqU9zQgoBF3XCyhywgyfpVbpXP0Y8a0k7fpPirsMoRNk8FRi47w/exec" method="POST">
+        <form id="contactForm" class="contact-form" action="https://formsubmit.co/treehousecreativesllc@gmail.com" method="POST">
+            <!-- Redirect to thank you page -->
+            <input type="hidden" name="_next" value="https://treehousecreatives.com/thank_you.html">
+            <!-- Prevent spam -->
+            <input type="hidden" name="_captcha" value="false">
             <div class="form-group">
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -91,6 +95,10 @@
                 <label for="message">Your Message:</label>
                 <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
             </div>
+
+            <!-- reCAPTCHA Widget -->
+            <div class="g-recaptcha" data-sitekey="6Les-7QqAAAAAEmzh-K7GpQYCXS7mkwP5eAJx6eM"></div>
+
             <button type="submit" class="submit-button">Send Message</button>
         </form>
     </section>
@@ -99,37 +107,30 @@
 <!-- JavaScript for Custom Redirection -->
 <script>
     document.getElementById("contactForm").addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent default form submission behavior
-
+        event.preventDefault(); // Prevent the default form submission behavior
         const form = event.target;
 
-        // Convert form data to JSON
-        const formData = new FormData(form);
-        const data = {};
-        formData.forEach((value, key) => {
-            data[key] = value;
-        });
-
-        // Send JSON data to Google Apps Script
+        // Send the form data using the Fetch API
         fetch(form.action, {
-            method: "POST",
-            body: JSON.stringify(data), // Send data as JSON
+            method: form.method,
+            body: new FormData(form),
             headers: {
-                "Content-Type": "application/json", // Inform the server it's JSON
-            },
+                'Accept': 'application/json'
+            }
         })
-            .then((response) => {
-                if (response.ok) {
-                    // Redirect to a Thank You page on success
-                    window.location.href = "thank_you.html";
-                } else {
-                    alert("Something went wrong. Please try again.");
-                }
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-                alert("An error occurred. Please try again later.");
-            });
+        .then((response) => {
+            if (response.ok) {
+                // Redirect to the Thank You page on success
+                window.location.href = "thank_you.html
+            } else {
+                // Show an error message if submission fails
+                alert("Something went wrong. Please try again later.");
+            }
+        })
+        .catch(() => {
+            // Handle network or other errors
+            alert("An error occurred while submitting the form. Please try again.");
+        });
     });
 </script>
 

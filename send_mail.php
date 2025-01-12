@@ -1,24 +1,29 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Sanitize user input
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
+    $service = htmlspecialchars($_POST['service']);
     $message = htmlspecialchars($_POST['message']);
 
-    // Email details
-    $to = "TreeHouseCreativesLLC@gmail.com"; // Replace with your email
+    // Recipient email address
+    $to = "your-email@example.com";
+
+    // Email subject
     $subject = "New Contact Form Submission";
-    $body = "Name: $name\nEmail: $email\nMessage:\n$message";
+
+    // Email body
+    $body = "Name: $name\nEmail: $email\nService: $service\nMessage:\n$message";
+
+    // Email headers
     $headers = "From: $email";
 
     // Send the email
     if (mail($to, $subject, $body, $headers)) {
-        echo "Message sent successfully!";
+        // Redirect to thank you page
+        header("Location: thank_you.html");
+        exit;
     } else {
-        echo "Error sending message.";
+        echo "Error: Unable to send email. Please try again later.";
     }
-} else {
-    header("HTTP/1.1 405 Method Not Allowed");
-    echo "405 Method Not Allowed";
 }
 ?>
