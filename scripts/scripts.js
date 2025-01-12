@@ -35,3 +35,32 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 fadeIns.forEach(fadeIn => observer.observe(fadeIn));
+
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => {
+        data[key] = value;
+    });
+
+    fetch(form.action, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+        .then((response) => {
+            if (response.ok) {
+                window.location.href = "thank_you.html";
+            } else {
+                alert("Something went wrong.");
+            }
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
+});
