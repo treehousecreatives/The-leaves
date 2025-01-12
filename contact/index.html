@@ -52,7 +52,7 @@
                 <img src="../images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 3cm;" loading="lazy">
             </div>
             <div style="font-size: 1.5rem;">
-                <a href="../index.html">Home</a> |
+                <a href="index.html">Home</a> |
                 <a href="../contact/">Contact</a> |
                 <a href="../about/">About</a> |
                 <a href="../services/">Services</a>
@@ -79,6 +79,8 @@
             <input type="hidden" name="_next" value="https://treehousecreatives.com/thank_you.html">
             <!-- Prevent spam -->
             <input type="hidden" name="_captcha" value="false">
+            
+            <!-- Form Fields -->
             <div class="form-group">
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -103,21 +105,18 @@
                 <label for="message">Your Message:</label>
                 <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
             </div>
-
+        
             <!-- reCAPTCHA Widget -->
             <div class="g-recaptcha" data-sitekey="6Les-7QqAAAAAEmzh-K7GpQYCXS7mkwP5eAJx6eM"></div>
-
+        
             <button type="submit" class="submit-button">Send Message</button>
-        </form>
+        </form>    
     </section>
 </main>
 
 <!-- JavaScript for Custom Redirection -->
-<script>
-    document.getElementById("contactForm").addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent the default form submission behavior
-        const form = event.target;
 
+<script>
         // Send the form data using the Fetch API
         fetch(form.action, {
             method: form.method,
