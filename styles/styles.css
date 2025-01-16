@@ -643,3 +643,66 @@ section h2 {
     justify-content: center;
 }
 
+/* General Style Adjustments for Smaller Margins */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Desktop-specific adjustments */
+@media (min-width: 1024px) {
+    .hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .hero-text {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 3rem; /* Reduce headline size */
+    }
+
+    h2 {
+        font-size: 2rem; /* Reduce section titles */
+    }
+
+    p {
+        font-size: 1rem; /* Adjust paragraph text */
+    }
+
+    .services {
+        padding: 0 2rem; /* Reduce overall padding */
+    }
+
+    .service-item {
+        flex: 1 1 250px; /* Adjust flex basis for smaller items */
+        margin: 0.5rem; /* Add tighter spacing between items */
+    }
+
+    .get-to-know {
+        padding: 1rem 2rem; /* Reduce padding inside the section */
+        margin-top: 1rem; /* Decrease vertical margin */
+    }
+
+    .projects-container {
+        padding: 0 2rem; /* Reduce horizontal padding */
+    }
+
+    footer {
+        background-color: #2b5a2b; /* Footer background color */
+        color: white; /* Footer text color */
+        padding: 1.5rem 0; /* Vertical padding */
+        text-align: center;
+        width: 100%; /* Make footer span the full width */
+        box-sizing: border-box; /* Include padding in the width calculation */
+    }
+    
+    footer .footer-content {
+        max-width: 1200px; /* Limit the width of the footer content */
+        margin: 0 auto; /* Center the content horizontally */
+        padding: 0 2rem; /* Add padding inside the content area */
+    }
