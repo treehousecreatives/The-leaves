@@ -1,159 +1,256 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact TreeHouse Creatives">
-    <meta name="keywords" content="contact, TreeHouse Creatives">
+    <meta name="description" content="TreeHouse Creatives Services">
+    <meta name="keywords" content="services, TreeHouse Creatives">
     <meta name="author" content="TreeHouse Creatives">
-    <title>Contact Us | TreeHouse Creatives</title>
+    <title>Services | TreeHouse Creatives</title>
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        .contact-section {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-section h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 2rem;
-            color: #333;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .submit-button {
-            width: 100%;
-            padding: 10px;
-            background-color: #556b2f;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        .submit-button:hover {
-            background-color: #445522;
-        }
-
-        .success-message,
-        .error-message {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 1rem;
-        }
-
-        .success-message {
-            color: green;
-        }
-
-        .error-message {
-            color: red;
-        }
-    </style>
+    <!-- Stylesheet -->
+    <link href="../styles/styles.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="../images/favicon-96x96.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../icons/icon-512x512.png"> 
 </head>
 
 <body>
-    <section class="contact-section">
-        <h2>Contact Us</h2>
-        <form id="contactForm" method="POST">
-            <div class="form-group">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-            </div>
-            <div class="form-group">
-                <label for="service">Service You’re Interested In:</label>
-                <select id="service" name="service" required>
-                    <option value="">Select a Service</option>
-                    <option value="Recording Studio Sessions">Recording Studio Sessions</option>
-                    <option value="Video Production Projects">Video Production Projects</option>
-                    <option value="Photo Shoots">Photo Shoots</option>
-                    <option value="Song Mixing/Mastering">Song Mixing/Mastering</option>
-                    <option value="Photo Editing">Photo Editing</option>
-                    <option value="Website Development">Website Development</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="message">Your Message:</label>
-                <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
-            </div>
-            <button type="submit" class="submit-button">Send Message</button>
-        </form>
-        <div class="success-message" id="successMessage" style="display: none;">
-            Your message was sent successfully! Thank you for contacting us.
+    <!-- Side Menu -->
+    <div id="side-menu" class="side-menu">
+        <div class="side-menu-header">
+            <i class="fa fa-times" title="Close menu" onclick="closeMenu()"></i>
         </div>
-        <div class="error-message" id="errorMessage" style="display: none;">
-            Something went wrong. Please try again.
+        <div class="side-menu-content" style="font-size: 6rem;">
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
         </div>
-    </section>
+    </div>
 
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", async function (event) {
-            event.preventDefault(); // Prevent default form submission
+    <header>
+        <!-- Desktop Navigation -->
+        <nav class="nav full-nav" style="border-bottom: 2px solid #000; padding-bottom: 10px;">
+            <div>
+                <img src="../images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 3cm;" loading="lazy">
+            </div>
+            <div style="font-size: 1.5rem;">
+                <a href="index.html">Home</a> |
+                <a href="contact.html">Contact</a> |
+                <a href="about.html">About</a> |
+                <a href="services.html">Services</a>
+            </div>
+        </nav>
 
-            const form = event.target;
-            const formData = new FormData(form);
+        <!-- Mobile Navigation -->
+        <nav class="nav mobile-nav">
+            <div>
+                <img src="../images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 2cm;">
+            </div>
+            <div>
+                <i class="fa-solid fa-bars" title="Open menu" onclick="openMenu()"></i>
+            </div>
+        </nav>
+    </header>
 
-            try {
-                const response = await fetch("YOUR_GOOGLE_SCRIPT_DEPLOYMENT_URL", {
-                    method: "POST",
-                    body: JSON.stringify(Object.fromEntries(formData.entries())),
-                    headers: { "Content-Type": "application/json" },
-                });
+    <main>
+        <section>
+            <div style="text-align: center; padding-top: 3rem;">
+                <h2 style="color: #000000;">Our Services</h2>
+            </div>
 
-                if (response.ok) {
-                    document.getElementById("successMessage").style.display = "block";
-                    document.getElementById("errorMessage").style.display = "none";
-                    form.reset(); // Clear the form
-                } else {
-                    document.getElementById("successMessage").style.display = "none";
-                    document.getElementById("errorMessage").style.display = "block";
+            <div class="services-container">
+                <!-- Music Category -->
+                <div id="music" class="service-category" style="position: relative;">
+                    <div class="category-overlay" style="background-image: url('../images/music production'); background-size: cover; background-position: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.8; z-index: -1;"></div>
+                    <h3 style="text-align: center; cursor: pointer; font-size: 5rem;" onclick="toggleCategory('music')">Music <i class="fa fa-chevron-down"></i></h3>
+                    <div class="service-items">
+                        <div class="service-item">
+                            <h4>Recording Studio Sessions</h4>
+                            <p>Professional-grade equipment for exceptional audio recording.</p>
+                            <a href="contact.html" class="book-now">Book Now</a>
+                        </div>
+                        <div class="service-item">
+                            <h4>Mixing and Mastering</h4>
+                            <p>Enhance your tracks with expert audio mixing and mastering.</p>
+                            <a href="contact.html" class="book-now">Book Now</a>
+                        </div>
+                        <div class="service-item">
+                            <h4>A capella arrangements</h4>
+                            <p>Custom A capella arrangements tailored to your vision.</p>
+                            <a href="contact.html" class="book-now">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Videos Category -->
+                <div id="videos" class="service-category" style="position: relative;">
+                    <div class="category-overlay" style="background-image: url('../images/video production'); background-size: cover; background-position: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.8; z-index: -1;"></div>
+                    <h3 style="text-align: center; cursor: pointer; font-size: 5rem;" onclick="toggleCategory('videos')">Videos <i class="fa fa-chevron-down"></i></h3>
+                    <div class="service-items">
+                        <div class="service-item">
+                            <h4>Music Video Production</h4>
+                            <p>High-quality video recording and post-production services.</p>
+                            <a href="contact.html" class="book-now">Book Now</a>
+                        </div>
+                        <div class="service-item">
+                            <h4>Event Videography</h4>
+                            <p>Professional coverage for your live events and performances.</p>
+                            <a href="contact.html" class="book-now">Book Now</a>
+                        </div>
+                        <div class="service-item">
+                            <h4>Promotional Videos</h4>
+                            <p>Tailored videos to promote your brand, event, or product.</p>
+                            <a href="contact.html" class="book-now">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Photos Category -->
+                <div id="photos" class="service-category" style="position: relative;">
+                    <div class="category-overlay" style="background-image: url('../images/photo shoot'); background-size: cover; background-position: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.8; z-index: -1;"></div>
+                    <h3 style="text-align: center; cursor: pointer; font-size: 5rem;" onclick="toggleCategory('photos')">Photos <i class="fa fa-chevron-down"></i></h3>
+                    <div class="service-items">
+                        <div class="service-item">
+                            <h4>Portrait Photography</h4>
+                            <p>Individual or group portraits captured with precision.</p>
+                            <a href="contact.html" class="book-now">Book Now</a>
+                        </div>
+                        <div class="service-item">
+                            <h4>Event Photography</h4>
+                            <p>Capture unforgettable moments with our event photography.</p>
+                            <a href="contact.html" class="book-now">Book Now</a>
+                        </div>
+                        <div class="service-item">
+                            <h4>Photo Editing</h4>
+                            <p>Transform your photos with professional editing services.</p>
+                            <a href="contact.html" class="book-now">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+                .services-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    margin-top: 2rem;
+                    max-width: 1000px;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
-            } catch (error) {
-                document.getElementById("successMessage").style.display = "none";
-                document.getElementById("errorMessage").style.display = "block";
-                console.error("Error:", error);
-            }
-        });
-    </script>
-</body>
+            
+                .service-category {
+                    flex: 1 1 100%;
+                    cursor: pointer;
+                    position: relative;
+                    color: white;
+                    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+                }
+            
+                .category-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                    background-size: cover;
+                    background-position: center;
+                    opacity: 0.8;
+                }
+
+                .service-category {
+                    margin-bottom: 2rem; /* Add gap to the bottom */
+                }
+            
+                .service-items {
+                    max-height: 0;
+                    overflow: hidden;
+                    opacity: 0;
+                    transition: max-height 1s ease, opacity 1s ease;
+                }
+            
+                .service-items.active {
+                    max-height: 1000px; /* Adjust based on content height */
+                    opacity: 1;
+                }
+            
+                .service-item {
+                    margin-bottom: 1rem;
+                    text-align: center;
+                }
+            
+                .book-now {
+                    background-color: green;
+                    color: white;
+                    padding: 10px 20px;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    font-size: 1rem;
+                }
+            </style>
+    <!-- Footer -->
+    <footer>
+        <div>
+            <img src="../images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 50%;" loading="lazy">
+        </div>
+        <div>
+            <div>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div>
+                <h4>&copy; 2025 TreeHouse Creatives LLC.</h4>
+            </div>
+        </div>
+        <div>
+            <a href="https://www.instagram.com/treehousecreativesllc" target="_blank" title="Follow us on Instagram">
+                <img src="../images/instagram logo redo.png" alt="Instagram logo" style="width: 10%;" loading="lazy">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61567313220968" target="_blank" title="Follow us on Facebook">
+                <img src="../images/facebook logo redo.png" alt="Facebook logo" style="width: 10%;" loading="lazy">
+            </a>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Side Menu and Category Toggle -->
+            
+            <script>
+                function toggleCategory(categoryId) {
+                    const category = document.getElementById(categoryId);
+                    const items = category.querySelector('.service-items');
+            
+                    // Toggle the active class
+                    if (items.classList.contains('active')) {
+                        items.classList.remove('active');
+                    } else {
+                        // Close other open categories
+                        const allItems = document.querySelectorAll('.service-items.active');
+                        allItems.forEach((item) => item.classList.remove('active'));
+            
+                        // Open the selected category
+                        items.classList.add('active');
+                    }
+                }
+            </script>
+            
 
 </html>

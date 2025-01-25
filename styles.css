@@ -248,3 +248,11 @@ body {
         text-align: center;
     }
 }
+
+.content-section {
+    margin-top: 10px; /* Adjust this value */
+    margin-bottom: 10px;
+}
+button {
+    margin: 0 auto;
+}
