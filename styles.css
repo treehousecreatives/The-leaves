@@ -249,3 +249,31 @@ body {
     }
 }
 
+/* New grid container to line up two sections per row */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; /* Adjust the gap as needed */
+}
+
+/* Keep existing styling for inner containers */
+.lightroom-container,
+.video-container,
+.music-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.lightroom-container iframe,
+.video-container iframe,
+.music-container iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 10px;
+}
+

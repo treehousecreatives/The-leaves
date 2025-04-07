@@ -2,277 +2,314 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TreeHouse Creatives Services">
-    <meta name="keywords" content="services, TreeHouse Creatives">
-    <meta name="author" content="TreeHouse Creatives">
-    <title>Services | TreeHouse Creatives</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Stylesheet -->
-    <link href="../styles/styles.css" rel="stylesheet">
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
-    <link rel="shortcut icon" href="../images/favicon.ico">
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" href="../images/favicon-96x96.png">
-    <link rel="manifest" href="../site.webmanifest">
-    <link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="../icons/icon-512x512.png"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TreeHouse Creatives Services">
+  <meta name="keywords" content="services, TreeHouse Creatives">
+  <meta name="author" content="TreeHouse Creatives">
+  <title>Services | TreeHouse Creatives</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link href="../styles/styles.css" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+  <link rel="shortcut icon" href="../images/favicon.ico">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="../images/favicon-96x96.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="../icons/icon-512x512.png">
+
+<!-- Inline CSS for Side Menu (opens from right with reduced width and faster transition) -->
+<style>
+    /* Side Menu Styles */
+    .side-menu {
+        height: 100%;
+        width: 0; /* hidden by default */
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        right: 0; /* open from the right */
+        background-color: #fff;
+        overflow-x: hidden;
+        transition: 0.3s ease; /* faster transition */
+        padding-top: 3rem;
+    }
+    .side-menu-header {
+        text-align: right; /* align close icon to the same position as menu button */
+        padding: 1rem 2rem;
+    }
+    .side-menu-header i {
+        font-size: 2rem;
+        cursor: pointer;
+        color: #000;
+    }
+    .side-menu-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* center items horizontally */
+        padding: 2rem;
+        font-size: 2rem;
+    }
+    .side-menu-content a {
+        display: block;
+        color: #000;
+        text-decoration: none;
+        margin: 1rem 0;
+        transition: color 0.3s ease;
+        text-align: center; /* center text */
+    }
+    .side-menu-content a:hover {
+        color: #556b2f;
+    }
+</style>
 </head>
 
 <body>
-    <!-- Side Menu -->
-    <div id="side-menu" class="side-menu">
-        <div class="side-menu-header">
-            <i class="fa fa-times" title="Close menu" onclick="closeMenu()"></i>
-        </div>
-        <div class="side-menu-content" style="font-size: 6rem;">
-            <a href="index.html">Home</a>
-            <a href="contact.html">Contact</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-        </div>
+  <!-- Side Menu -->
+  <div id="side-menu" class="side-menu">
+    <div class="side-menu-header">
+      <i class="fa fa-times" title="Close menu" onclick="closeMenu()"></i>
     </div>
+    <div class="side-menu-content">
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+    </div>
+  </div>
 
-    <header>
-        <!-- Desktop Navigation -->
-        <nav class="nav full-nav" style="border-bottom: 2px solid #000; padding-bottom: 10px;">
-            <div>
-                <img src="../images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 3cm;" loading="lazy">
+  <header>
+    <!-- Desktop Navigation -->
+    <nav class="nav full-nav" style="border-bottom: 2px solid #000; padding-bottom: 10px;">
+      <div>
+        <img src="../images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 3cm;" loading="lazy">
+      </div>
+      <div style="font-size: 1.5rem;">
+        <a href="contact.html">Contact</a> |
+        <a href="about.html">About</a> |
+        <a href="services.html">Services</a> |
+        <a href="portfolio.html">Portfolio</a>
+      </div>
+    </nav>
+    <!-- Mobile Navigation -->
+    <nav class="nav mobile-nav">
+      <div>
+        <img src="../images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 2cm;">
+      </div>
+      <div>
+        <i class="fa-solid fa-bars" title="Open menu" onclick="openMenu()"></i>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Our Services Section -->
+    <section>
+      <div style="text-align: center; padding-top: 3rem;">
+        <h2 style="color: #000000;">Our Services</h2>
+      </div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <p style="font-size: 1.5rem; color: red;">Please note: All bookings require a non-refundable 50% deposit, which will go towards the total price.</p>
+      </div>
+      <div style="text-align: center; margin-top: 1rem;">
+        <p style="font-size: 1.2rem; color: #000;">Note: Prices may vary depending on the specific requirements of each service.</p>
+      </div>
+
+      <div class="services-container">
+        <!-- Music Category -->
+        <div id="music" class="service-category" style="position: relative;">
+          <div class="category-overlay" style="background-image: url('../images/music production'); background-size: cover; background-position: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.8; z-index: -1;"></div>
+          <h3 style="text-align: center; cursor: pointer; font-size: 4rem;" onclick="toggleCategory('music')">Music <i class="fa fa-chevron-down"></i></h3>
+          <div class="service-items">
+            <div class="service-item">
+              <h4 style="color: black; font-size: 1.5rem;">Recording Studio Sessions</h4>
+              <p style="font-size: 1.3rem;">Professional-grade equipment for exceptional audio recording.</p>
+              <p class="price" style="margin-bottom: 2rem; font-size: 1.5rem;">Starting at $50/hour</p>
+              <a href="contact.html" class="book-now">Book Now</a>
             </div>
-            <div style="font-size: 1.5rem;">
-                <a href="index.html">Home</a> |
-                <a href="contact.html">Contact</a> |
-                <a href="about.html">About</a> |
-                <a href="services.html">Services</a>
+            <div class="service-item">
+              <h4 style="color: black; font-size: 1.5rem;">Mixing and Mastering</h4>
+              <p style="font-size: 1.3rem;">Enhance your tracks with expert audio mixing and mastering.</p>
+              <p class="price" style="margin-bottom: 2rem; font-size: 1.5rem;">Starting at $75/song</p>
+              <a href="contact.html" class="book-now">Book Now</a>
             </div>
-        </nav>
-
-        <!-- Mobile Navigation -->
-        <nav class="nav mobile-nav">
-            <div>
-                <img src="../images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 2cm;">
+            <div class="service-item">
+              <h4 style="color: black; font-size: 1.5rem;">Acapella Arrangements</h4>
+              <p style="font-size: 1.3rem;">Custom Acapella arrangements tailored to your vision.</p>
+              <p class="price" style="margin-bottom: 2rem; font-size: 1.5rem;">Starting at $200/arrangement</p>
+              <a href="contact.html" class="book-now">Book Now</a>
             </div>
-            <div>
-                <i class="fa-solid fa-bars" title="Open menu" onclick="openMenu()"></i>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section>
-            <div style="text-align: center; padding-top: 3rem;">
-                <h2 style="color: #000000;">Our Services</h2>
-            </div>
-            <div style="text-align: center; margin-top: 2rem;">
-                <p style="font-size: 1.5rem; color: red;">Please note: All bookings require a non-refundable 50% deposit, which will go towards the total price.</p>
-            </div>
-
-            <div class="services-container">
-                <!-- Music Category -->
-                <div id="music" class="service-category" style="position: relative;">
-                    <div class="category-overlay" style="background-image: url('../images/music production'); background-size: cover; background-position: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.8; z-index: -1;"></div>
-                    <h3 style="text-align: center; cursor: pointer; font-size: 4rem;" onclick="toggleCategory('music')">Music <i class="fa fa-chevron-down"></i></h3>
-                    <div class="service-items">
-                        <div class="service-item">
-                            <h4 style="color: black; font-size: 1.5rem; text-shadow: none;">Recording Studio Sessions</h4>
-                            <p style="font-size: 1.3rem; text-shadow: none;">Professional-grade equipment for exceptional audio recording.</p>
-                            <p class="price" style="margin-bottom: 2rem; font-size: 1.5rem;">Starting at $50/hour</p>
-                            <a href="contact.html" class="book-now">Book Now</a>
-                        </div>
-                        <div class="service-item">
-                            <h4 style="color: black; font-size: 1.5rem; text-shadow: none;">Mixing and Mastering</h4>
-                            <p style="font-size: 1.3rem; text-shadow: none;">Enhance your tracks with expert audio mixing and mastering.</p>
-                            <p class="price" style="margin-bottom: 2rem; font-size: 1.5rem;">Starting at $75/song</p>
-                            <a href="contact.html" class="book-now">Book Now</a>
-                        </div>
-                        <div class="service-item">
-                            <h4 style="color: black; font-size: 1.5rem; text-shadow: none;">Acapella Arrangements</h4>
-                            <p style="font-size: 1.3rem; text-shadow: none;">Custom Acapella arrangements tailored to your vision.</p>
-                            <p class="price" style="margin-bottom: 2rem; font-size: 1.5rem;">Starting at $200/arrangement</p>
-                            <a href="contact.html" class="book-now">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Videos Category -->
-                <div id="videos" class="service-category" style="position: relative;">
-                    <div class="category-overlay" style="background-image: url('../images/video production'); background-size: cover; background-position: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.8; z-index: -1;"></div>
-                    <h3 style="text-align: center; cursor: pointer; font-size: 4rem;" onclick="toggleCategory('videos')">Videos <i class="fa fa-chevron-down"></i></h3>
-                    <div class="service-items">
-                        <div class="service-item">
-                            <h4 style="color: black; font-size: 1.5rem; text-shadow: none;">Music Video Production</h4>
-                            <p style="font-size: 1.3rem; text-shadow: none;">High-quality video recording and post-production services.</p>
-                            <p class="price" style="margin-bottom: 2rem; font-size: 1.5rem;">Starting at $300/video</p>
-                            <a href="contact.html" class="book-now">Book Now</a>
-                        </div>
-                        <div class="service-item">
-                            <h4 style="color: black; font-size: 1.5rem; text-shadow: none;">Event Videography</h4>
-                            <p style="font-size: 1.3rem; text-shadow: none;">Professional coverage for your live events and performances.</p>
-                            <p class="price" style="margin-bottom: 2rem; font-size: 1.5rem;">Starting at $200/event</p>
-                            <a href="contact.html" class="book-now">Book Now</a>
-                        </div>
-                        <div class="service-item">
-                            <h4 style="color: black; font-size: 1.5rem; text-shadow: none;">Promotional Videos</h4>
-                            <p style="font-size: 1.3rem; text-shadow: none;">Tailored videos to promote your brand, event, or product.</p>
-                            <p class="price" style="margin-bottom: 2rem; font-size: 1.5rem;">Starting at $150/video</p>
-                            <a href="contact.html" class="book-now">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Photos Category -->
-                <div id="photos" class="service-category" style="position: relative;">
-                    <div class="category-overlay" style="background-image: url('../images/photo shoot'); background-size: cover; background-position: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.8; z-index: -1;"></div>
-                    <h3 style="text-align: center; cursor: pointer; font-size: 4rem;" onclick="toggleCategory('photos')">Photos <i class="fa fa-chevron-down"></i></h3>
-                    <div class="service-items">
-                        <div class="service-item">
-                            <h4 style="color: black; font-size: 1.5rem; text-shadow: none;">Portrait Photography</h4>
-                            <p style="font-size: 1.3rem; text-shadow: none;">Individual or group portraits captured with precision.</p>
-                            <p class="price" style="margin-bottom: 2rem; font-size: 1.5rem;">Starting at $125/session</p>
-                            <a href="contact.html" class="book-now">Book Now</a>
-                        </div>
-                        <div class="service-item">
-                            <h4 style="color: black; font-size: 1.5rem; text-shadow: none;">Event Photography</h4>
-                            <p style="font-size: 1.3rem; text-shadow: none;">Capture unforgettable moments with our event photography.</p>
-                            <p class="price" style="margin-bottom: 2rem; font-size: 1.5rem;">Starting at $150/event</p>
-                            <a href="contact.html" class="book-now">Book Now</a>
-                        </div>
-                        <div class="service-item">
-                            <h4 style="color: black; font-size: 1.5rem; text-shadow: none;">Photo Editing</h4>
-                            <p style="font-size: 1.3rem; text-shadow: none;">Transform your photos with professional editing services.</p>
-                            <p class="price" style="margin-bottom: 2rem; font-size: 1.5rem;">Starting at $10/photo</p>
-                            <a href="contact.html" class="book-now">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 3rem;">
-                <h3 style="color: #000000; font-size: 1.5rem;">Don't see what you're looking for?</h3>
-                <p style="font-size: 1rem;">If you have a specific request or need a custom service, please don't hesitate to reach out to us.</p>
-                <div style="margin-bottom: 2rem;"></div>
-                <a href="contact.html" class="book-now">Contact Us</a>
-            </div>
-            <!-- Add a gap before the footer -->
-            <div style="margin-top: 5rem;"></div>
-            
-
-            <style>
-                .services-container {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    margin-top: 2rem;
-                    max-width: 1000px;
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-            
-                .service-category {
-                    flex: 1 1 100%;
-                    cursor: pointer;
-                    position: relative;
-                    color: white;
-                    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-                }
-            
-                .category-overlay {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    z-index: -1;
-                    background-size: cover;
-                    background-position: center;
-                    opacity: 0.8;
-                }
-
-                .service-category {
-                    margin-bottom: 2rem; /* Add gap to the bottom */
-                }
-            
-                .service-items {
-                    max-height: 0;
-                    overflow: hidden;
-                    opacity: 0;
-                    transition: max-height 1s ease, opacity 1s ease;
-                }
-            
-                .service-items.active {
-                    max-height: 1000px; /* Adjust based on content height */
-                    opacity: 1;
-                }
-            
-                .service-item {
-                    margin-bottom: 1rem;
-                    text-align: center;
-                }
-            
-                .book-now {
-                    background-color: green;
-                    color: white;
-                    padding: 10px 20px;
-                    text-decoration: none;
-                    border-radius: 5px;
-                    font-size: 1rem;
-                }
-            </style>
-    <!-- Footer -->
-    <footer>
-        <div>
-            <img src="../images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 50%;" loading="lazy">
+          </div>
         </div>
-        <div>
-            <div>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div>
-                <h4>&copy; 2025 TreeHouse Creatives LLC.</h4>
-            </div>
-        </div>
-        <div>
-            <a href="https://www.instagram.com/treehousecreativesllc" target="_blank" title="Follow us on Instagram">
-                <img src="../images/instagram logo redo.png" alt="Instagram logo" style="width: 10%;" loading="lazy">
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=61567313220968" target="_blank" title="Follow us on Facebook">
-                <img src="../images/facebook logo redo.png" alt="Facebook logo" style="width: 10%;" loading="lazy">
-            </a>
-        </div>
-    </footer>
 
-    <!-- JavaScript for Side Menu and Category Toggle -->
-            
-            <script>
-                function toggleCategory(categoryId) {
-                    const category = document.getElementById(categoryId);
-                    const items = category.querySelector('.service-items');
-            
-                    // Toggle the active class
-                    if (items.classList.contains('active')) {
-                        items.classList.remove('active');
-                    } else {
-                        // Close other open categories
-                        const allItems = document.querySelectorAll('.service-items.active');
-                        allItems.forEach((item) => item.classList.remove('active'));
-            
-                        // Open the selected category
-                        items.classList.add('active');
-                    }
-                }
-            </script>
-            
+        <!-- Videos Category -->
+        <div id="videos" class="service-category" style="position: relative;">
+          <div class="category-overlay" style="background-image: url('../images/video production'); background-size: cover; background-position: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.8; z-index: -1;"></div>
+          <h3 style="text-align: center; cursor: pointer; font-size: 4rem;" onclick="toggleCategory('videos')">Videos <i class="fa fa-chevron-down"></i></h3>
+          <div class="service-items">
+            <div class="service-item">
+              <h4 style="color: black; font-size: 1.5rem;">Music Video Production</h4>
+              <p style="font-size: 1.3rem;">High-quality video recording and post-production services.</p>
+              <p class="price" style="margin-bottom: 2rem; font-size: 1.5rem;">Starting at $300/video</p>
+              <a href="contact.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-item">
+              <h4 style="color: black; font-size: 1.5rem;">Event Videography</h4>
+              <p style="font-size: 1.3rem;">Professional coverage for your live events and performances.</p>
+              <p class="price" style="margin-bottom: 2rem; font-size: 1.5rem;">Starting at $200/event</p>
+              <a href="contact.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-item">
+              <h4 style="color: black; font-size: 1.5rem;">Promotional Videos</h4>
+              <p style="font-size: 1.3rem;">Tailored videos to promote your brand, event, or product.</p>
+              <p class="price" style="margin-bottom: 2rem; font-size: 1.5rem;">Starting at $150/video</p>
+              <a href="contact.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-item">
+              <h4 style="color: black; font-size: 1.5rem;">Spotlight Videos</h4>
+              <p style="font-size: 1.3rem;">Highlight your achievements with our spotlight videos.</p>
+              <p class="price" style="margin-bottom: 2rem; font-size: 1.5rem;">Starting at $175/video</p>
+              <a href="contact.html" class="book-now">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photos Category -->
+        <div id="photos" class="service-category" style="position: relative;">
+          <div class="category-overlay" style="background-image: url('../images/photo shoot'); background-size: cover; background-position: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.8; z-index: -1;"></div>
+          <h3 style="text-align: center; cursor: pointer; font-size: 4rem;" onclick="toggleCategory('photos')">Photos <i class="fa fa-chevron-down"></i></h3>
+          <div class="service-items">
+            <div class="service-item">
+              <h4 style="color: black; font-size: 1.5rem;">Portrait Photography</h4>
+              <p style="font-size: 1.3rem;">Individual or group portraits captured with precision.</p>
+              <p class="price" style="margin-bottom: 2rem; font-size: 1.5rem;">Starting at $125/session</p>
+              <a href="contact.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-item">
+              <h4 style="color: black; font-size: 1.5rem;">Event Photography</h4>
+              <p style="font-size: 1.3rem;">Capture unforgettable moments with our event photography.</p>
+              <p class="price" style="margin-bottom: 2rem; font-size: 1.5rem;">Starting at $150/event</p>
+              <a href="contact.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-item">
+              <h4 style="color: black; font-size: 1.5rem;">Photo Editing</h4>
+              <p style="font-size: 1.3rem;">Transform your photos with professional editing services.</p>
+              <p class="price" style="margin-bottom: 2rem; font-size: 1.5rem;">Starting at $10/photo</p>
+              <a href="contact.html" class="book-now">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <h3 style="color: #000000; font-size: 1.5rem;">Don't see what you're looking for?</h3>
+        <p style="font-size: 1rem;">If you have a specific request or need a custom service, please don't hesitate to reach out to us.</p>
+        <div style="margin-bottom: 2rem;"></div>
+        <a href="contact.html" class="book-now">Contact Us</a>
+      </div>
+      <div style="margin-top: 5rem;"></div>
+
+      <style>
+        .services-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-top: 2rem;
+          max-width: 1000px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .service-category {
+          flex: 1 1 100%;
+          cursor: pointer;
+          position: relative;
+          color: white;
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+          margin-bottom: 2rem;
+        }
+        .category-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          background-size: cover;
+          background-position: center;
+          opacity: 0.8;
+        }
+        .service-items {
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          transition: max-height 1s ease, opacity 1s ease;
+        }
+        .service-items.active {
+          max-height: 2000px;
+          opacity: 1;
+        }
+        .service-item {
+          margin-bottom: 1rem;
+          text-align: center;
+        }
+        .book-now {
+          background-color: green;
+          color: white;
+          padding: 10px 20px;
+          text-decoration: none;
+          border-radius: 5px;
+          font-size: 1rem;
+        }
+      </style>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <img src="../images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 50%;" loading="lazy">
+    </div>
+    <div>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>&copy; 2025 TreeHouse Creatives LLC.</h4>
+      </div>
+    </div>
+    <div>
+      <a href="https://www.instagram.com/treehousecreativesllc" target="_blank" title="Follow us on Instagram">
+        <img src="../images/instagram logo redo.png" alt="Instagram logo" style="width: 10%;" loading="lazy">
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61567313220968" target="_blank" title="Follow us on Facebook">
+        <img src="../images/facebook logo redo.png" alt="Facebook logo" style="width: 10%;" loading="lazy">
+      </a>
+    </div>
+  </footer>
+
+
+<script>
+    // Open side menu (fixed width from left)
+    function openMenu() {
+        document.getElementById("side-menu").style.width = "300px";
+    }
+    // Close side menu
+    function closeMenu() {
+        document.getElementById("side-menu").style.width = "0";
+    }
+</script>
+</body>
 
 </html>

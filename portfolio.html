@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TreeHouseCreativesLLC">
+  <meta name="keywords" content="music production, video production, artistic expression, creative agency, TreeHouse Creatives, TreeHouseCreativesLLC, TreeHouse Creatives LLC, TreeHouse Creatives LLC., TreeHouse Creatives LLC,">
+  <meta name="author" content="TreeHouseCreativesLLC">
+  <title>TreeHouse Creatives</title>
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <!-- stylesheet -->
+  <link href="../styles/styles.css" rel="stylesheet">
+  <!-- font awesome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="scripts/scripts.js" defer></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+  <link rel="shortcut icon" href="../images/favicon.ico">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="../images/favicon-96x96.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="../icons/icon-512x512.png">
+
+  <!-- Inline Styles for Portfolio Sections -->
+  <style>
+    /* Styling for Portfolio Sections */
+    .portfolio-section {
+      text-align: center;
+      padding: 3rem;
+      background-color: #f9f9f9;
+    }
+
+    .portfolio-section h2 {
+      font-size: 3rem;
+      color: #444;
+    }
+
+    .portfolio-section p {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+    }
+
+    .lightroom-container,
+    .video-container,
+    .music-container {
+      max-width: 900px;
+      margin: auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .lightroom-container iframe,
+    .video-container iframe,
+    .music-container iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Side Menu -->
+  <div id="side-menu" class="side-menu">
+    <div class="side-menu-header">
+      <i class="fa fa-times" title="Close menu" onclick="closeMenu()"></i>
+    </div>
+    <div class="side-menu-content" style="font-size: 6rem;">
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+    </div>
+  </div>
+
+  <header>
+    <!-- Desktop Navigation -->
+    <nav class="nav full-nav" style="border-bottom: 2px solid #000; padding-bottom: 10px;">
+      <div>
+        <img src="../images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 3cm;" loading="lazy">
+      </div>
+      <div style="font-size: 1.5rem;">
+        <a href="index.html">Home</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="about.html">About</a> |
+        <a href="services.html">Services</a>
+      </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <nav class="nav mobile-nav">
+      <div>
+        <img src="../images/CREATIVES.png" alt="TreeHouseCreativesLLC logo" style="width: 2cm;">
+      </div>
+      <div>
+        <i class="fa-solid fa-bars" title="Open menu" onclick="openMenu()"></i>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Header Section -->
+    <section class="portfolio-section">
+      <img src="../images/PORTFOLIO.jpg" alt="Portfolio Header Image" style="width: 100%; max-height: 500px; object-fit: cover; border-radius: 10px;">
+      <p style="font-size: 1.5rem; color: #555; max-width: 800px; margin: 1rem auto;">
+        A collection of our finest creative work, showcasing our expertise in photography, videography, and music production.
+      </p>
+    </section>
+
+    <!-- Photography Portfolio Section -->
+    <section class="portfolio-section">
+    <img src="../images/photgraphy.jpg" alt="Photography Portfolio" style="width: 100%; height: auto; border-radius: 10px;">
+      <p>Explore our photography work categorized by different themes.</p>
+
+      <h3>Event Photography</h3>
+      <div class="lightroom-container">
+        <iframe src="https://lightroom.adobe.com/embed/shares/9f690c1369bb4e1ab6c7761c3e791fc7/slideshow?" allowfullscreen></iframe>
+      </div>
+
+      <h3>Portraits</h3>
+      <div class="lightroom-container">
+        <iframe src="https://lightroom.adobe.com/embed/shares/14635d53293a4c2c9e68dd5582398574/slideshow?" allowfullscreen></iframe>
+      </div>
+
+      <h3>Creative Concepts</h3>
+      <div class="lightroom-container">
+        <iframe src="https://lightroom.adobe.com/embed/shares/cfede671958342ba9a04d68f1ae0401d/slideshow?" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Video Portfolio Section -->
+    <section class="portfolio-section">
+      <img src="../images/videography.jpg" alt="Video Portfolio" style="width: 100%; height: auto; border-radius: 10px;">
+      <p>Watch some of our best video productions.</p>
+      <div class="video-container" style="display: flex; gap: 1rem;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Yl4Jo-WmDas?si=WQSWutsh6IIJUvD-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/p_7tczzjF9c?si=4j8_8uBH-aBUAMAl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    </section>
+
+    <!-- Music Production Portfolio Section (full width) -->
+    <section class="portfolio-section">
+    <img src="../images/Music.jpg" alt="Music Production" style="width: 100%; height: auto; border-radius: 10px;">
+      <p>Listen to the playlist of tracks I've mixed and mastered on Spotify.</p>
+      <div class="music-container">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/75UXSvvWuode48rZHbHNid?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <img src="../images/CREATIVES.png" alt="TreeHouse Creatives logo" style="width: 50%;" loading="lazy">
+    </div>
+    <div>
+      <div>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="/about/">About</a>
+      </div>
+      <div>
+        <h4>&copy; 2025 TreeHouse Creatives LLC.</h4>
+      </div>
+    </div>
+    <div>
+      <a href="https://www.instagram.com/treehousecreativesllc" target="_blank" title="Follow us on Instagram">
+        <img src="../images/instagram logo redo.png" alt="Instagram logo" style="width: 10%;" loading="lazy">
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61567313220968" target="_blank" title="Follow us on Facebook">
+        <img src="../images/facebook logo redo.png" alt="Facebook logo" style="width: 10%;" loading="lazy">
+      </a>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Side Menu -->
+  <script>
+    function openMenu() {
+      document.getElementById('side-menu').classList.add('open');
+    }
+
+    function closeMenu() {
+      document.getElementById('side-menu').classList.remove('open');
+    }
+  </script>
+</body>
+
+</html>
