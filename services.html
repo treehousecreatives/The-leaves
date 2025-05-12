@@ -72,6 +72,17 @@
 </style>
 </head>
 
+<script>
+  function toggleCategory(id) {
+    const section = document.querySelector(`#${id} .service-items`);
+    if (section.classList.contains("active")) {
+      section.classList.remove("active");
+    } else {
+      section.classList.add("active");
+    }
+  }
+</script>
+
 <body>
   <!-- Side Menu -->
   <div id="side-menu" class="side-menu">
