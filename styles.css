@@ -309,10 +309,13 @@
   background: #080611;
 }
 .room-page.shot {
-  background: #f6f6f3;
+  background: #f8f8f5;
   color: var(--ink);
 }
 .shot .room-services { border-color: #304a3240; }
+@media (min-width: 851px) {
+  .shot .room-layout { grid-template-columns: 1fr 1fr; }
+}
 .room-page.direction { background: #291915; }
 .room-page .room-art { position: relative; }
 .room-page.mix .room-art::after {
@@ -337,7 +340,6 @@
   object-fit: contain;
   border-radius: 0;
 }
-.shot .room-logo { mix-blend-mode: multiply; }
 .mix .room-logo { mix-blend-mode: lighten; }
 .room-page .room-art:has(.room-logo) {
   padding: 0;
@@ -434,50 +436,51 @@
   padding: 0;
 }
 [data-open-development].start, .hero-bottom [data-open-development] { border-bottom: 1px solid; }
-.hero-bottom [data-open-development] { padding-bottom: 7px; text-transform: uppercase; font-size: 11px; letter-spacing: .12em; font-weight: 700; }
-[data-open-development].cta { width: 100%; background: var(--ink); color: white; padding: 20px 22px; font-size: 11px; font-weight: 700; letter-spacing: .12em; }
+.hero-bottom [data-open-development], [data-open-development].cta {
+  min-height: 44px;
+  padding: .75rem 1rem;
+  border: 1px solid var(--green);
+  background: var(--lime);
+  color: var(--ink);
+  text-transform: uppercase;
+  font-size: .8rem;
+  letter-spacing: .08em;
+  font-weight: 800;
+}
+[data-open-development].cta { width: 100%; }
+.hero-bottom [data-open-development]:is(:hover, :focus-visible),
+[data-open-development].cta:is(:hover, :focus-visible) {
+  background: var(--green);
+  color: var(--paper);
+}
 dialog.development-guide { width: min(760px, 94vw); max-height: 90dvh; border: 1px solid var(--lime); padding: clamp(1.25rem, 5vw, 3rem); }
 dialog.development-guide::backdrop { background: #0d100cbf; }
 .development-guide form { display: flex; justify-content: flex-end; }
 .guide-close { cursor: pointer; font-size: 1.65rem; color: inherit; background: none; border: 1px solid currentColor; min-width: 44px; min-height: 44px; }
-.floating-development {
-  position: fixed;
-  z-index: 95;
-  inset-inline-end: max(1rem, env(safe-area-inset-right));
-  bottom: max(1rem, env(safe-area-inset-bottom));
+header .logo { font-size: clamp(1rem, 1.45vw, 1.2rem); }
+header nav {
+  gap: clamp(.75rem, 1.75vw, 1.65rem);
+  font-size: clamp(.875rem, 1.25vw, 1rem);
+  font-weight: 600;
+}
+header nav .start, .mobile-nav .start {
   display: inline-flex;
   align-items: center;
-  gap: .65rem;
-  max-width: calc(100% - 2rem);
-  min-height: 48px;
-  padding: .4rem 1rem .4rem .4rem;
-  border: 1px solid var(--paper);
+  align-self: flex-start;
+  min-height: 44px;
+  padding: .55rem 1rem;
+  border: 1px solid var(--green);
   border-radius: 999px;
-  background: var(--green);
-  color: var(--paper);
-  box-shadow: 0 4px 18px #0d100c35;
-  font: 800 .85rem Manrope, sans-serif;
-  cursor: pointer;
-}
-.floating-development-icon {
-  display: grid;
-  place-items: center;
-  flex: 0 0 2rem;
-  aspect-ratio: 1;
-  border-radius: 0 75% 0 75%;
   background: var(--lime);
   color: var(--ink);
-  font-size: 1rem;
+  font: 800 .875rem Manrope, sans-serif;
+  white-space: nowrap;
 }
-.floating-development:is(:hover, :focus-visible) {
-  background: var(--lime);
-  color: var(--ink);
-}
-.floating-development:is(:hover, :focus-visible) .floating-development-icon {
+header nav .start:is(:hover, :focus-visible), .mobile-nav .start:is(:hover, :focus-visible) {
   background: var(--green);
   color: var(--paper);
 }
-body:has(.floating-development) footer { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); }
+.mobile-nav .start { margin-top: .5rem; }
 
 @media (prefers-reduced-motion: no-preference) {
   dialog.development-guide[open] {

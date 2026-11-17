@@ -1,0 +1,39 @@
+.floating-development {
+  position: fixed;
+  z-index: 95;
+  inset-inline-end: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  max-width: calc(100% - 2rem);
+  min-height: 48px;
+  padding: .4rem 1rem .4rem .4rem;
+  border: 1px solid var(--paper, #f1eee5);
+  border-radius: 999px;
+  background: var(--lime, #a6c659);
+  color: var(--ink, #0d100c);
+  text-decoration: none;
+  box-shadow: 0 4px 18px #0d100c35;
+  font: 800 .85rem Manrope, system-ui, sans-serif;
+  cursor: pointer;
+}
+.floating-development-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 2rem;
+  aspect-ratio: 1;
+  border-radius: 0 75% 0 75%;
+  background: var(--green, #153a1b);
+  color: var(--paper, #f1eee5);
+  font-size: 1rem;
+}
+.floating-development:is(:hover, :focus-visible) {
+  background: var(--green, #153a1b);
+  color: var(--paper, #f1eee5);
+}
+.floating-development:is(:hover, :focus-visible) .floating-development-icon {
+  background: var(--lime, #a6c659);
+  color: var(--ink, #0d100c);
+}
+body:has(.floating-development) footer { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); }
