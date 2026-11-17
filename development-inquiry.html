@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Tell TreeHouse Creatives what you’re working on and get help choosing a next step.">
+<meta name="theme-color" content="#153a1b">
+<title>Artist Development Inquiry | TreeHouse Creatives</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=development-guide">
+<link rel="stylesheet" href="development-inquiry.css">
+</head>
+<body>
+<div class="loader"><div>TREEHOUSE<br>CREATIVES</div><span></span></div>
+
+<header>
+  <a class="logo" href="index.html#top">TREEHOUSE CREATIVES<span>®</span></a>
+  <nav>
+    <a href="index.html#development">Development</a>
+    <details class="room-menu">
+      <summary>The House</summary>
+      <div><a href="index.html#branches">All rooms</a><a href="tree-on-the-mix.html">Tree on the Mix</a><a href="shot-with-tree.html">Shot With Tree</a><a href="treehouse-direction.html">TreeHouse Directions</a></div>
+    </details>
+    <a href="index.html#process">Process</a>
+    <a href="index.html#about">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a class="start" href="#inquiry">Start Your Development</a>
+  </nav>
+  <button class="menu" aria-label="Open menu">☰</button>
+</header>
+
+<div class="mobile-nav">
+  <button aria-label="Close menu">×</button>
+  <a href="index.html#development">Development</a>
+  <a href="index.html#branches">The House</a>
+  <div class="mobile-room-links"><a href="tree-on-the-mix.html">Tree on the Mix</a><a href="shot-with-tree.html">Shot With Tree</a><a href="treehouse-direction.html">TreeHouse Directions</a></div>
+  <a href="index.html#process">Process</a>
+  <a href="index.html#about">About</a>
+    <a href="portfolio.html">Portfolio</a>
+  <a href="#inquiry">Start Your Development</a>
+</div>
+
+<main id="top" class="room-page inquiry-page pad">
+  <div class="inquiry-intro">
+    <div>
+      <p class="eyebrow">Artist development</p>
+      <h1>Find your<br><em>next step.</em></h1>
+      <p>Tell us what you’re making and where you could use a hand. We’ll help you figure out where to start.</p>
+    </div>
+    <section aria-labelledby="inquiry-help">
+      <h2 id="inquiry-help">What we can help with</h2>
+      <dl>
+        <dt>Sound</dt><dd>Recording, vocal production, feedback, mixing, and mastering.</dd>
+        <dt>Visuals</dt><dd>Artist portraits, press photos, cover art, and campaign imagery.</dd>
+        <dt>Creative direction</dt><dd>Artist identity, release concepts, and how your music and visuals fit together.</dd>
+      </dl>
+    </section>
+  </div>
+  <section class="room-booking" id="inquiry" aria-labelledby="inquiry-title">
+    <h2 id="inquiry-title">Tell us about your project</h2>
+    <form class="inquiry-form" action="https://formsubmit.co/treehousecreativesllc@gmail.com" method="POST">
+      <input type="hidden" name="_next" disabled>
+      <input type="hidden" name="_subject" value="Artist development inquiry">
+      <div class="inquiry-fields">
+        <label>Your name or artist name <input name="name" autocomplete="name" required></label>
+        <label>Email <input name="email" type="email" autocomplete="email" required></label>
+      </div>
+      <label>Where could you use help?
+        <select name="area">
+          <option>I’m still figuring it out</option>
+          <option>Sound</option>
+          <option>Visuals</option>
+          <option>Creative direction</option>
+          <option>A mix of these</option>
+        </select>
+      </label>
+      <label>What are you working on, and what feels stuck?
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <button class="room-button" type="submit">Send inquiry <span aria-hidden="true">↗</span></button>
+    </form>
+  </section>
+</main>
+<footer>
+  <a class="logo" href="index.html#top">TREEHOUSE CREATIVES<span>®</span></a>
+  <p>ARTIST DEVELOPMENT · ATLANTA, GA</p>
+  <p>© <span id="year"></span> TREEHOUSE CREATIVES LLC</p>
+</footer>
+<script src="script.js?v=development-guide"></script>
+<script>
+  const confirmation = document.querySelector('.inquiry-form [name="_next"]');
+  if (location.protocol === 'http:' || location.protocol === 'https:') {
+    confirmation.value = new URL('thank_you.html', location.href).href;
+    confirmation.disabled = false;
+  }
+</script>
+</body>
+</html>
