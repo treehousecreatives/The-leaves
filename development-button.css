@@ -37,3 +37,15 @@
   color: var(--ink, #0d100c);
 }
 body:has(.floating-development) footer { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); }
+
+.scroll-development {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  outline: 8px solid #f1eee5b3;
+  transition: opacity .25s ease, transform .25s ease, visibility .25s;
+}
+.scroll-development.is-visible { opacity: 1; visibility: visible; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .scroll-development { transition: none; transform: none; }
+}

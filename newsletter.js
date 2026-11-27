@@ -16,10 +16,20 @@ document.body.insertAdjacentHTML("beforeend", `
     </form>
   </dialog>
 `);
+const newsletterFooter = document.querySelector("footer");
+if (newsletterFooter) {
+  newsletterFooter.append(document.querySelector(".newsletter-open"));
+}
 const newsletterDialog = document.querySelector(".newsletter-dialog");
 const newsletterOpen = document.querySelector(".newsletter-open");
-newsletterOpen.addEventListener("click", () => newsletterDialog.showModal());
-newsletterDialog.addEventListener("close", () => newsletterOpen.focus());
+let newsletterTrigger = newsletterOpen;
+document.querySelectorAll(".newsletter-open").forEach(button => {
+  button.addEventListener("click", () => {
+    newsletterTrigger = button;
+    newsletterDialog.showModal();
+  });
+});
+newsletterDialog.addEventListener("close", () => newsletterTrigger.focus());
 newsletterDialog.addEventListener("click", event => {
   if (event.target === newsletterDialog) {
     const bounds = newsletterDialog.getBoundingClientRect();
@@ -29,15 +39,32 @@ newsletterDialog.addEventListener("click", event => {
 });
 let newsletterSeen = false;
 try { newsletterSeen = sessionStorage.getItem("newsletter-seen") === "yes"; } catch {}
-if (!newsletterSeen) {
-  setTimeout(() => {
+const selectedWork = document.querySelector("#work");
+if (!newsletterSeen && selectedWork) {
+  const newsletterObserver = new IntersectionObserver(entries => {
+    if (!entries.some(entry => entry.isIntersecting)) return;
+    if (newsletterSeen) {
+      newsletterObserver.disconnect();
+      return;
+    }
     if (document.visibilityState !== "visible" || document.querySelector("dialog[open]")) return;
     newsletterDialog.showModal();
+    newsletterSeen = true;
     try { sessionStorage.setItem("newsletter-seen", "yes"); } catch {}
-  }, 10000);
+    newsletterObserver.disconnect();
+  }, { threshold: 0.2 });
+  newsletterObserver.observe(selectedWork);
 }
 
-const newsletterForm = newsletterDialog.querySelector('form[action]');
+const popupNewsletterForm = newsletterDialog.querySelector('form[action]');
+const inlineNewsletter = document.querySelector(".newsletter-inline");
+if (inlineNewsletter) {
+  const inlineForm = popupNewsletterForm.cloneNode(true);
+  inlineForm.querySelector("#newsletter-email").id = "newsletter-inline-email";
+  inlineForm.querySelector('label[for="newsletter-email"]').htmlFor = "newsletter-inline-email";
+  inlineNewsletter.append(inlineForm);
+}
+document.querySelectorAll('.newsletter-dialog form[action], .newsletter-inline form').forEach(newsletterForm => {
 const newsletterStatus = document.createElement("p");
 newsletterStatus.setAttribute("role", "status");
 newsletterForm.append(newsletterStatus);
@@ -55,13 +82,22 @@ newsletterForm.addEventListener("submit", async event => {
     if (!response.ok || !result.success) {
       throw new Error("Signup could not be completed.");
     }
-    newsletterDialog.querySelector("#newsletter-title").textContent = "Signup successful!";
-    newsletterForm.hidden = true;
-    const welcome = newsletterDialog.querySelector("#newsletter-title + p");
-    welcome.textContent = "You’re on the list. Welcome to the TreeHouse newsletter! Check your inbox for your confirmation email.";
+    try { sessionStorage.setItem("newsletter-seen", "yes"); } catch {}
+    newsletterSeen = true;
+    if (newsletterDialog.contains(newsletterForm)) {
+      newsletterDialog.querySelector("#newsletter-title").textContent = "Signup successful!";
+      newsletterForm.hidden = true;
+      newsletterDialog.querySelector("#newsletter-title + p").textContent =
+        "You’re on the list. Welcome to the TreeHouse newsletter! Check your inbox for your confirmation email.";
+    } else {
+      newsletterForm.replaceChildren(newsletterStatus);
+      newsletterStatus.textContent = "Signup successful! You’re on the list. Check your inbox for your confirmation email.";
+    }
   } catch {
     newsletterStatus.textContent = "We couldn’t confirm your signup. Please try again.";
   } finally {
     submit.disabled = false;
   }
+});
+
 });

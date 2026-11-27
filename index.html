@@ -9,10 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=process-alignment">
+<link rel="stylesheet" href="styles.css?v=wide-process-layout">
 <link rel="stylesheet" href="work-gallery.css">
-<link rel="stylesheet" href="development-button.css?v=small-arrow">
-<link rel="stylesheet" href="newsletter.css">
+<link rel="stylesheet" href="development-button.css?v=scroll-overlay">
+<link rel="stylesheet" href="newsletter.css?v=footer-layout">
 </head>
 <body>
 <div class="loader"><div>TREEHOUSE<br>CREATIVES</div><span></span></div>
@@ -60,12 +60,7 @@
     <p>TreeHouse Creatives helps emerging artists define their sound, image, identity, and the world surrounding their art.</p>
     <button type="button" data-open-development aria-haspopup="dialog">Start Your Development <b aria-hidden="true">↗</b></button>
   </div>
-  <div class="hero-sprout" aria-hidden="true">
-    <span class="sprout-stem"></span>
-    <span class="sprout-leaf"></span>
-    <span class="sprout-leaf"></span>
-    <span class="sprout-leaf"></span>
-  </div>
+  <img class="hero-brand-logo" src="assets/treehouse-creatives-original.png" width="3000" height="3000" alt="" aria-hidden="true">
 </section>
 
 <section id="development" class="intro pad">
@@ -76,6 +71,17 @@
       <p>Artist development isn't about turning you into somebody else. It's about getting intentional about who you already are — then making sure your music, visuals, story, and presentation speak the same language.</p>
       <p>TreeHouse brings those pieces into one creative ecosystem so you don't have to develop every part of your artistry in isolation.</p>
     </div>
+  </div>
+</section>
+
+<section class="newsletter-section pad" aria-labelledby="newsletter-section-title">
+  <div>
+    <p class="eyebrow">Inside the TreeHouse</p>
+    <h2 id="newsletter-section-title">A little inspiration.<br><em>Delivered.</em></h2>
+  </div>
+  <div>
+    <p>New work, behind-the-scenes moments, and creative notes for your next chapter.</p>
+    <div class="newsletter-inline"></div>
   </div>
 </section>
 
@@ -191,6 +197,7 @@
   <p>© <span id="year"></span> TREEHOUSE CREATIVES LLC</p>
 </footer>
 <script src="script.js?v=development-guide"></script>
-<script src="newsletter.js?v=signup-success"></script>
+<script src="newsletter.js?v=footer-layout"></script>
+<script src="development-scroll.js"></script>
 </body>
 </html>

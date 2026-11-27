@@ -58,3 +58,62 @@
   font: 800 1rem "DM Sans", sans-serif;
   cursor: pointer;
 }
+
+.newsletter-section {
+  display: grid;
+  grid-template-columns: 1.35fr .65fr;
+  gap: 8vw;
+  align-items: center;
+  background: #153a1b;
+  color: #f1eee5;
+}
+.newsletter-section h2 {
+  margin: 0;
+  font: 800 clamp(2.5rem, 5.5vw, 5rem)/1 Manrope, sans-serif;
+  letter-spacing: -.065em;
+}
+.newsletter-section h2 em { font-family: "Playfair Display", serif; font-weight: 500; }
+.newsletter-section p:not(.eyebrow) { line-height: 1.65; }
+.newsletter-section .newsletter-open { margin: 1.5rem 0 0; }
+@media (max-width: 850px) {
+  .newsletter-section { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .newsletter-dialog[open] {
+    transform-origin: center;
+    animation: newsletter-swell .55s cubic-bezier(.22, 1, .36, 1) both;
+  }
+  .newsletter-dialog[open]::backdrop {
+    animation: newsletter-backdrop .45s ease-out both;
+  }
+  @keyframes newsletter-swell {
+    from { opacity: 0; transform: translateY(12px) scale(.92); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes newsletter-backdrop {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+.newsletter-inline input[type="email"] {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: .5rem 0 1rem;
+  padding: .9rem 1rem;
+  border: 1px solid #a6c659;
+  border-radius: 4px;
+  background: #f1eee5;
+  color: #0d100c;
+  font: inherit;
+}
+.newsletter-inline form > label:first-of-type { font-weight: 700; }
+.newsletter-inline [role="status"] { line-height: 1.6; }
+
+footer > .newsletter-open {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin: 0;
+}
