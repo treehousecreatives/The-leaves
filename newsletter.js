@@ -1,5 +1,5 @@
 document.body.insertAdjacentHTML("beforeend", `
-  <button class="newsletter-open" type="button" aria-haspopup="dialog">Join the newsletter ↗</button>
+  <button class="newsletter-open" type="button" aria-haspopup="dialog">Sign Up for Newsletter ↗</button>
   <dialog class="newsletter-dialog" aria-labelledby="newsletter-title">
     <form method="dialog"><button class="newsletter-close" aria-label="Close newsletter signup">×</button></form>
     <p class="eyebrow">Inside the TreeHouse</p>
@@ -34,5 +34,5 @@ if (!newsletterSeen) {
     if (document.visibilityState !== "visible" || document.querySelector("dialog[open]")) return;
     newsletterDialog.showModal();
     try { sessionStorage.setItem("newsletter-seen", "yes"); } catch {}
-  }, 15000);
+  }, 10000);
 }
