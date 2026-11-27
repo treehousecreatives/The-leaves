@@ -448,6 +448,29 @@
   font-weight: 800;
 }
 [data-open-development].cta { width: 100%; }
+.hero-bottom [data-open-development] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .45rem .45rem .45rem 1.2rem;
+  border: 1px solid var(--green);
+  border-radius: 999px;
+  text-transform: none;
+  letter-spacing: normal;
+  font: 800 .95rem Manrope, sans-serif;
+}
+.hero-bottom [data-open-development] b {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0;
+  border-radius: 0 75% 0 75%;
+  background: var(--green);
+  color: var(--paper);
+  font-size: 1.25rem;
+}
 .hero-bottom [data-open-development]:is(:hover, :focus-visible),
 [data-open-development].cta:is(:hover, :focus-visible) {
   background: var(--green);
@@ -516,3 +539,74 @@ header nav .start:is(:hover, :focus-visible), .mobile-nav .start:is(:hover, :foc
     to { opacity: 1; transform: translateY(0); }
   }
 }
+
+/* Photographic overlays keep the homepage tiles connected to the work. */
+.pillars article, .steps article {
+  background-image: linear-gradient(to bottom, #f1eee54d, #f1eee5ed 65%, #f1eee5 100%), var(--tile-image);
+  background-size: cover;
+  background-position: center;
+}
+.pillars article:nth-child(1) { --tile-image: url("assets/photography/red-suit-portrait.jpg"); }
+.pillars article:nth-child(2) {
+  --tile-image: url("assets/photography/blue-light-portrait.jpg");
+  background-position: center, center calc(50% - 90px);
+  background-repeat: no-repeat;
+  background-color: var(--paper);
+}
+.pillars article:nth-child(3) { --tile-image: url("assets/photography/outdoor-fashion.jpg"); }
+.pillars article:nth-child(4) {
+  --tile-image: url("assets/photography/city-portraits.jpg");
+  background-size: 100% 100%, 100% auto;
+  background-position: center, center top;
+  background-repeat: no-repeat;
+  background-color: var(--paper);
+}
+.steps article {
+  background-image: linear-gradient(to bottom, #cbd2b766, #cbd2b7f5 48%, #cbd2b7 100%), var(--tile-image);
+}
+.steps article:nth-child(1) {
+  --tile-image: url("assets/photography/pinstripe-suit.jpg");
+  background-size: 100% 100%, auto 180%;
+  background-position: center, 55% 20%;
+  background-repeat: no-repeat;
+  background-color: var(--sage);
+}
+.steps article:nth-child(2) {
+  --tile-image: url("assets/photography/autumn-portrait.jpg");
+  background-position: center, center calc(50% + 30px);
+  background-repeat: no-repeat;
+  background-color: var(--sage);
+}
+.steps article:nth-child(3) {
+  --tile-image: url("assets/photography/basketball-court.jpg");
+  background-position: center, center calc(50% + 25px);
+  background-repeat: no-repeat;
+  background-color: var(--sage);
+}
+.steps article:nth-child(4) {
+  --tile-image: url("assets/photography/atlanta-at-night.jpg");
+  background-position: center, center calc(50% - 95px);
+  background-repeat: no-repeat;
+  background-color: var(--sage);
+}
+.hero-bottom [data-open-development] b {
+  width: 1.65rem;
+  height: 1.65rem;
+  font-size: .9rem;
+}
+.founder-tag {
+  font-size: clamp(.8rem, 1.2vw, 1rem);
+  padding: 1rem 1.2rem;
+  letter-spacing: .08em;
+}
+.contact [data-open-development].cta {
+  border-radius: 999px;
+  padding: .85rem 1.2rem;
+  font: 800 .95rem Manrope, sans-serif;
+  text-transform: none;
+  letter-spacing: normal;
+}
+.contact .cta span { font-size: 1.15rem; }
+.contact .social { display: inline-block; font-size: 1rem; line-height: 1.5; }
+footer { font-size: .8rem; letter-spacing: .06em; }
+footer .logo { font-size: 1.1rem; }

@@ -21,12 +21,12 @@
 .floating-development-icon {
   display: grid;
   place-items: center;
-  flex: 0 0 2rem;
+  flex: 0 0 1.5rem;
   aspect-ratio: 1;
   border-radius: 0 75% 0 75%;
   background: var(--green, #153a1b);
   color: var(--paper, #f1eee5);
-  font-size: 1rem;
+  font-size: .8rem;
 }
 .floating-development:is(:hover, :focus-visible) {
   background: var(--green, #153a1b);
