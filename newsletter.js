@@ -38,22 +38,23 @@ newsletterDialog.addEventListener("click", event => {
   }
 });
 let newsletterSeen = false;
-try { newsletterSeen = sessionStorage.getItem("newsletter-seen") === "yes"; } catch {}
+try { newsletterSeen = sessionStorage.getItem("newsletter-subscribed") === "yes"; } catch {}
 const selectedWork = document.querySelector("#work");
-if (!newsletterSeen && selectedWork) {
-  const newsletterObserver = new IntersectionObserver(entries => {
-    if (!entries.some(entry => entry.isIntersecting)) return;
-    if (newsletterSeen) {
-      newsletterObserver.disconnect();
-      return;
-    }
-    if (document.visibilityState !== "visible" || document.querySelector("dialog[open]")) return;
+if (selectedWork && !newsletterSeen) {
+  const openNewsletterAtWork = () => {
+    if (newsletterSeen || document.visibilityState !== "visible" || document.querySelector("dialog[open]")) return;
+    const bounds = selectedWork.getBoundingClientRect();
+    if (bounds.top >= window.innerHeight * .85 || bounds.bottom <= 0) return;
     newsletterDialog.showModal();
     newsletterSeen = true;
-    try { sessionStorage.setItem("newsletter-seen", "yes"); } catch {}
-    newsletterObserver.disconnect();
-  }, { threshold: 0.2 });
-  newsletterObserver.observe(selectedWork);
+    window.removeEventListener("scroll", openNewsletterAtWork);
+    document.removeEventListener("visibilitychange", openNewsletterAtWork);
+    document.removeEventListener("close", openNewsletterAtWork, true);
+  };
+  window.addEventListener("scroll", openNewsletterAtWork, { passive: true });
+  document.addEventListener("visibilitychange", openNewsletterAtWork);
+  document.addEventListener("close", openNewsletterAtWork, true);
+  openNewsletterAtWork();
 }
 
 const popupNewsletterForm = newsletterDialog.querySelector('form[action]');
@@ -82,7 +83,7 @@ newsletterForm.addEventListener("submit", async event => {
     if (!response.ok || !result.success) {
       throw new Error("Signup could not be completed.");
     }
-    try { sessionStorage.setItem("newsletter-seen", "yes"); } catch {}
+    try { sessionStorage.setItem("newsletter-subscribed", "yes"); } catch {}
     newsletterSeen = true;
     if (newsletterDialog.contains(newsletterForm)) {
       newsletterDialog.querySelector("#newsletter-title").textContent = "Signup successful!";
