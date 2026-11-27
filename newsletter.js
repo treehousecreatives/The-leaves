@@ -36,3 +36,32 @@ if (!newsletterSeen) {
     try { sessionStorage.setItem("newsletter-seen", "yes"); } catch {}
   }, 10000);
 }
+
+const newsletterForm = newsletterDialog.querySelector('form[action]');
+const newsletterStatus = document.createElement("p");
+newsletterStatus.setAttribute("role", "status");
+newsletterForm.append(newsletterStatus);
+newsletterForm.addEventListener("submit", async event => {
+  event.preventDefault();
+  const submit = newsletterForm.querySelector('[type="submit"]');
+  submit.disabled = true;
+  newsletterStatus.textContent = "Signing you up…";
+  try {
+    const response = await fetch(newsletterForm.action + "?isAjax=1", {
+      method: "POST",
+      body: new FormData(newsletterForm)
+    });
+    const result = await response.json();
+    if (!response.ok || !result.success) {
+      throw new Error("Signup could not be completed.");
+    }
+    newsletterDialog.querySelector("#newsletter-title").textContent = "Signup successful!";
+    newsletterForm.hidden = true;
+    const welcome = newsletterDialog.querySelector("#newsletter-title + p");
+    welcome.textContent = "You’re on the list. Welcome to the TreeHouse newsletter! Check your inbox for your confirmation email.";
+  } catch {
+    newsletterStatus.textContent = "We couldn’t confirm your signup. Please try again.";
+  } finally {
+    submit.disabled = false;
+  }
+});
